@@ -1,0 +1,38 @@
+<div class="page-container {{hovered?'collaps':''}}">
+    <div class="left-container {{hovered?'left-hover':''}}" (mouseover)="collaps($event,true)" (mouseout)="collaps($event,false)">
+       
+        <div class="logo">
+            <img class="img1" src="assets/logo.png">
+            <div class="{{hovered?'':'dis-none'}}" class="img2">MyTrip</div>
+        </div>
+        <div class="group-container">
+            <div class="first-container" [style.display]="hovered?'':'none'">
+                  <div>Groups</div>
+                  <div class="plus">+</div>
+            </div>
+            <div class="{{hovered?'dis-none':''}}" class="logo1"> <img class="img1" src="assets/group.png"></div>
+            <div class="user-container">
+                <div *ngFor="let x of arr" class="user-row  {{hovered?'':'user-small-row'}}">
+                    <div class="user-image"><img src="assets/pk.jpeg"></div>
+                    <div class="{{hovered?'':'dis-none'}}" class="user-name" >Parveen Kumar</div>
+                </div>
+            </div>
+      </div>
+        <div class="group-container">
+            <div class="first-container " [style.display]="hovered?'':'none'">
+                <div>Chats</div>
+                <div class="plus">+</div>
+          </div>
+          <div class="{{hovered?'dis-none':''}}" class="logo1"> <img class="img1" src="assets/chat.jpeg"></div>
+          <div class="user-container">
+              <div *ngFor="let x of arr" class="user-row  {{hovered?'':'user-small-row'}}">
+                  <div class="user-image"><img src="assets/pk.jpeg"></div>
+                  <div class="{{hovered?'':'dis-none'}}" class="user-name" >Parveen Kumar</div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="right-container {{hovered?'right-hover':''}}">
+  
+    </div>
+</div>
