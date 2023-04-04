@@ -6,9 +6,10 @@
             <div class="{{hovered?'':'dis-none'}}" class="img2">MyTrip</div>
         </div>
         <div class="group-container">
+            <app-create-chat *ngIf="openCreateChat" (openCreateChat)="openCreateChat=false"></app-create-chat>
             <div class="first-container" [style.display]="hovered?'':'none'">
                   <div>Groups</div>
-                  <div class="plus">+</div>
+                  <div class="plus" (click)="openCreateChat=true">+</div>
             </div>
             <div class="{{hovered?'dis-none':''}}" class="logo1"> <img class="img1" src="assets/group.png"></div>
             <div class="user-container">
@@ -19,9 +20,10 @@
             </div>
       </div>
         <div class="group-container">
+            <app-create-group *ngIf="openGroupChat"></app-create-group>
             <div class="first-container " [style.display]="hovered?'':'none'">
                 <div>Chats</div>
-                <div class="plus">+</div>
+                <div class="plus" (click)="openGroupChat=true">+</div>
           </div>
           <div class="{{hovered?'dis-none':''}}" class="logo1"> <img class="img1" src="assets/chat.jpeg"></div>
           <div class="user-container">

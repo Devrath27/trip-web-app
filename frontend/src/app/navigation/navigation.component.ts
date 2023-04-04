@@ -9,6 +9,8 @@ import { Route, Router } from '@angular/router';
 export class NavigationComponent implements OnInit{
   hovered=true;
   arr=[1,1,1,1,1,1,1,1];
+  openCreateChat=false;
+  openGroupChat=false;
   constructor(private router: Router){
 
   }
@@ -20,5 +22,6 @@ export class NavigationComponent implements OnInit{
   this.hovered=t;
   e.stopPropagation()
   }
+  
 
 }
