@@ -6,7 +6,6 @@ target/
 .idea/*
 **/.DS_Store
 
-
 ### STS ###
 .apt_generated
 .classpath
