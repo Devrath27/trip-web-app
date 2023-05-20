@@ -86,6 +86,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>trip-docker</finalName>
 	</build>
 	<repositories>
 		<repository>
