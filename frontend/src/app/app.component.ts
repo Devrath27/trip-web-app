@@ -10,7 +10,7 @@ export class AppComponent implements OnInit{
   title(title: any) {
     throw new Error('Method not implemented.');
   }
-  isLogedin=false;
+  isLogedin=true;
   constructor(private router: Router){
 
   }

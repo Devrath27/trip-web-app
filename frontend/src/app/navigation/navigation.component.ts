@@ -20,6 +20,7 @@ chatId=""
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         let x = this.route.snapshot.paramMap.get('id');
+        console.log(x)
         if(x!=null  && x.length>0)
         {
          this.chatId=x;
@@ -29,6 +30,7 @@ chatId=""
       }
     });
   }
+ 
  collaps(e:any,t:boolean)
   {
   this.hovered=t;
@@ -36,8 +38,10 @@ chatId=""
   }
   openChat(x:string)
   {  let url=`navigation/chat/${x}`;
+
      this.router.navigate([url])
-     this.isOpenChat=true;
+       //this.isOpenChat=true;
+    
   }
   
 
