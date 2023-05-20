@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dadada;
+    height: 50px;
+    padding: 9px;
+    .left{
+       
+        display: flex;
+        align-items: center;
+        gap:20px;
+        .back-logo{
+            cursor: pointer;
+        img{
+            
+            height: 30px;
+            width: 30px;
+        }
+    }
+    .user{
+        align-items: center;
+        display: flex;
+        gap:20px;
+        img{
+            height: 50px;
+            border-radius: 50%;
+        }
+        p{
+            font-size: 24px;
+            
+        }
+    }
+    }
+}

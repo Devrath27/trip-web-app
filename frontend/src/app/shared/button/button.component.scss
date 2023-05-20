@@ -1,0 +1,46 @@
+.button{
+    outline: none;
+    cursor: pointer;
+    height: 29px;
+    width: 100px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0px;
+   
+}
+.button1{
+    color: rgba(25, 91, 172, 0.806);
+    background-color: #ffff;
+    border: 2px solid #ffff;
+    &:hover{
+        border: 2px solid rgba(25, 91, 172, 0.806);
+    }
+}
+.button2{
+    color: rgba(25, 91, 172, 0.806);
+    background-color: #ffff;
+    border: 2px solid rgba(25, 91, 172, 0.806);
+    &:hover{
+        color:#ffff;
+        background-color: rgba(25, 91, 172, 0.806);
+        border: 2px solid rgba(25, 91, 172, 0.806);
+       
+    }
+}
+.button3{
+  height: 40px;
+  width: 120px;
+    border-radius: 50px;
+    color:#ffff;
+    background-color: #7C9CAF;
+    border: 2px solid #7C9CAF;
+   &:hover{
+    background-color: #228298;
+    border: 2px solid #228298;
+   }
+    &:disabled{
+        cursor: not-allowed;
+        background-color: #a98e65;
+
+    }
+}

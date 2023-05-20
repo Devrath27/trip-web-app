@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-create-group',
@@ -6,14 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-group.component.scss']
 })
 export class CreateGroupComponent implements OnInit {
-  ngOnInit(): void {
-    
-  }
+  @Output() openCreateChat=new EventEmitter<boolean>();
   constructor(){
 
   }
-  search(e:any){
+  ngOnInit(): void {
+   
+  }
+  search(e:any)
+  {
 
+  }
+  onCross()
+  {
+    this.openCreateChat.emit();
   }
 
 }

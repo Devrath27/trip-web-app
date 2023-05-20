@@ -1,0 +1,16 @@
+<div class="chat-section-container">
+    <app-chat-header></app-chat-header>
+    <div class="scroll">
+    <div class="chat-section" #chatSection>
+        <div *ngFor="let x of message" class="chat-box">
+            <div class="user">
+                <img src="assets/pk.jpeg">
+                <p>Parveen Kumar {{chatId}}</p>
+            </div>
+          
+            <div class="chat" [innerHtml]="x"></div>
+        </div>
+    </div>
+</div>
+    <app-chat-footer (onSend)="addMessage($event)"></app-chat-footer>
+</div>

@@ -1,5 +1,6 @@
 <div class="blur">
     <div class="create-chat-container">
+        <div>
         <div class="header">Create a Group</div>
       <div class="top-container">
         <label>
@@ -14,7 +15,12 @@
           </div>
       </div>
     <div class="add-user-container">
-        <div class="input-div"><input type="text"></div>
+        <div class="input-div"><input type="text" placeholder="Enter name or email of person "></div>
       </div>
+    </div>
+      <div class="footer">
+        <app-button [buttonText]="'cancle'" [buttonType]="1" (click)="onCross()"></app-button>
+        <app-button [buttonText]="'Create'" [buttonType]="2"></app-button>
+    </div>
     </div>
     </div>
