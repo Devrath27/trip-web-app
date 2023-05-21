@@ -2,3 +2,4 @@
 
 # version
  v1
+ v1.2
