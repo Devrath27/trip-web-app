@@ -1,0 +1,65 @@
+<div class="page-container">
+   <div class="box">
+
+    <img class="top" src="assets/wallLogin.jpeg"> 
+        <div class="form"  *ngIf="type" [formGroup]="loginForm">
+        
+            <div class="txt">Email: </div>
+        <div class="input">
+        <input type="email" formControlName="email">
+        </div>
+   
+   
+        <div class="txt">Password: </div>
+        <div class="row">
+         <div class="input"> <input #y type="password" formControlName="password"></div>
+        </div>
+        <div></div>
+        <div class="password"><div style="display: flex; gap: 10px;align-items: center;"> <label class="check-container">
+            <input #checkbox type="checkbox" (change)="y.type=(y.type=='text'?'password':'text')">
+            <span class="checkmark"></span>
+        </label><span>show password</span></div> <div  class="link-text">forget password</div></div>
+        <div></div>
+        <div class="buttons">
+        <app-button [buttonText]="'Sign in'" [buttonType]="3" (click)="loginUser()"></app-button>
+        <span (click)="type=!type" class="link-text">Sign up </span>
+       
+        </div>
+    </div>
+    <div class="form"  *ngIf="!type" [formGroup]="signUpForm">
+        
+        <div class="txt">First Name: </div>
+        <div class="input">
+        <input type="yexy" formControlName="firstName">
+        </div>
+
+        <div class="txt">Last Name:  </div>
+        <div class="input">
+        <input type="text" formControlName="lastName">
+        </div>
+
+        <div class="txt">Email: </div>
+        <div class="input">
+        <input type="email" formControlName="email">
+        </div>
+   
+   
+        <div class="txt">Password: </div>
+        <div class="row">
+         <div class="input"> <input type="password" #x formControlName="password"></div>
+        </div>
+        <div></div>
+        <div class="password"><div style="display: flex; gap: 10px;align-items: center;"> <label class="check-container">
+            <input #checkbox type="checkbox" (change)="x.type=(x.type=='text'?'password':'text')">
+            <span class="checkmark"></span>
+        </label><span >show password</span></div> </div>
+        <div></div>
+        <div class="buttons">
+        <app-button [buttonText]="'Sign up'" [buttonType]="3" (click)="signUpUser()"></app-button>
+        <span (click)="type=!type" class="link-text">Sign In</span>
+       
+        </div>
+</div>
+</div>
+   
+</div>
