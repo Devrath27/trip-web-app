@@ -33,7 +33,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     public static final String FORBIDDEN_REQUEST = "Forbidden Request";
     public static final String TOKEN_IS_EXPIRED = "Token is expired";
     private final static String BEARER = "Bearer ";
-    private static final String[] PERMITTED_URI = new String[]{"/users/register", "/users/login"};
+    private static final String[] PERMITTED_URI = new String[]{"/users/register", "/users/login", "/users/verifyEmail"};
 
     UserRepository userRepository;
 

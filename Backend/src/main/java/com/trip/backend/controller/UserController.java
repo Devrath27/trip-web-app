@@ -40,5 +40,12 @@ public class UserController {
     public LoginResponse createAuthenticationToken(@Valid @RequestBody UserLoginRequest userLoginRequest) throws InvalidLoginCredential, Exception {
         return this.loginUserService.createAuthenticationToken(userLoginRequest);
     }
+    @PostMapping("/users/verifyEmail/{email}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public SentEmailResponse sentEmail(@Valid @PathVariable("email") String email , @RequestBody SentEmailRequest sentEmailRequest){
+        System.out.println(sentEmailRequest.getOtp());
+           return this.userService.sentEmail(email,sentEmailRequest);
+    }
+
 
 }
