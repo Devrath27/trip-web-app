@@ -6,5 +6,5 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class RegistrationResponse {
-    String message;
+    String token;
 }

@@ -38,6 +38,7 @@ public class LoginUserService {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userRequest.getEmail(),
                     userRequest.getPassword()));
         } catch (AuthenticationException e) {
+            System.out.println("invalid");
             throw new InvalidLoginCredential(INVALID_LOGIN_CREDENTIAL);
         } catch (Exception e){
             throw new Exception(e.getMessage());

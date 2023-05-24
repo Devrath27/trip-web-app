@@ -20,8 +20,8 @@ public class UserRepository {
         return jpaUserRepository.findByEmail(email);
 
     }
-    public String create(User user) {
-        return this.jpaUserRepository.save(user).getEmail();
+    public User create(User user) {
+        return this.jpaUserRepository.save(user);
     }
 
 }
