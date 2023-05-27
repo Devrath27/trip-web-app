@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NavigationModule } from './navigation/navigation.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavigationModule } from './navigation/navigation.module';
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    NavigationModule
+    NavigationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
