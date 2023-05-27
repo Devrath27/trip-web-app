@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@CrossOrigin(origins = "https://trip-backend-service.onrender.com")
 public class UserController {
     private static final String USER_SUCCESSFULLY_REGISTERED = "User Successfully Registered";
     UserService userService;
