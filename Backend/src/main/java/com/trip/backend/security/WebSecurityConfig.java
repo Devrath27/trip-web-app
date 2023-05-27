@@ -21,7 +21,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
     public static final String USERS_URLS = "/users/**";
 
 
