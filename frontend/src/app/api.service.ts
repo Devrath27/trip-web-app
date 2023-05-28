@@ -13,6 +13,7 @@ export class ApiService {
     let url = this.baseUrl+'/users/verifyEmail/'+email;
     let headers = {
       "content-type": "application/json",
+      
     }
     return this.http.post(url,{"otp":otp},{headers:headers});
    }
