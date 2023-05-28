@@ -19,7 +19,7 @@ public class BackendApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry){
-				registry.addMapping("/**").allowedOrigins("https://trip-backend-service.onrender.com");
+				registry.addMapping("/**").allowedOrigins("https://trip-backend-service.onrender.com").allowedHeaders("*").allowCredentials(true).allowedMethods("*");
 
 			}
 		};
