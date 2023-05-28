@@ -6,13 +6,13 @@
         
             <div class="txt">Email: </div>
         <div class="input">
-        <input type="email" formControlName="email">
+        <input type="email" formControlName="email" (input)="change(true)">
         </div>
    
    
         <div class="txt">Password: </div>
         <div class="row">
-         <div class="input"> <input #y type="password" formControlName="password"></div>
+         <div class="input"> <input #y type="password" formControlName="password" (input)="change(true)"></div>
         </div>
         <div></div>
         <div class="password"><div style="display: flex; gap: 10px;align-items: center;"> <label class="check-container">
@@ -25,28 +25,34 @@
         <span (click)="type=!type" class="link-text">Sign up </span>
        
         </div>
+        <div></div>
+        <div class="error" *ngIf="isAll">*{{errorMsg}}</div>
     </div>
     <div class="form"  *ngIf="!type" [formGroup]="signUpForm">
         
         <div class="txt">First Name: </div>
         <div class="input">
-        <input type="yexy" formControlName="firstName">
+        <input type="yexy" formControlName="firstName" (input)="change(false)">
         </div>
-
         <div class="txt">Last Name:  </div>
         <div class="input">
-        <input type="text" formControlName="lastName">
+        <input type="text" formControlName="lastName" (input)="change(false)">
         </div>
 
         <div class="txt">Email: </div>
         <div class="input">
-        <input type="email" formControlName="email">
+        <input type="email" formControlName="email" (input)="change(false)">
+        </div>
+        <div class="txt">Verify email: </div>
+        <div class="input" style="display: flex;">
+            <app-button [buttonText]="'Send OTP'" [buttonType]="4" (click)=" sendOtp()">Send OTP</app-button>
+        <input style="width: 50%;" type="email"  (input)="change(false)" placeholder="OTP goes here..." #otp>
         </div>
    
    
         <div class="txt">Password: </div>
         <div class="row">
-         <div class="input"> <input type="password" #x formControlName="password"></div>
+         <div class="input"> <input type="password" #x formControlName="password" (input)="change(false)"></div>
         </div>
         <div></div>
         <div class="password"><div style="display: flex; gap: 10px;align-items: center;"> <label class="check-container">
@@ -55,11 +61,15 @@
         </label><span >show password</span></div> </div>
         <div></div>
         <div class="buttons">
-        <app-button [buttonText]="'Sign up'" [buttonType]="3" (click)="signUpUser()"></app-button>
+        <app-button [buttonText]="'Sign up'" [buttonType]="3" (click)="signUpUser(otp.value)"></app-button>
         <span (click)="type=!type" class="link-text">Sign In</span>
        
         </div>
+        <div></div>
+        <div class="error" *ngIf="isAll">*{{errorMsg}}</div>
 </div>
+<app-pop-up *ngIf="isOtp" [msg]="msg" [popUpType]="popUpType"></app-pop-up>
+
 </div>
    
 </div>
