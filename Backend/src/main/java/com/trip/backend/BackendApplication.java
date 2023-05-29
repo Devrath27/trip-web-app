@@ -19,7 +19,7 @@ public class BackendApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry){
-				registry.addMapping("/**").allowedOrigins("https://main--comfy-pika-513f78.netlify.app").allowedHeaders("*").allowCredentials(true).allowedMethods("*");
+				registry.addMapping("/**").allowedOrigins("https://main--comfy-pika-513f78.netlify.app","http://localhost:4200").allowedHeaders("*").allowCredentials(true).allowedMethods("*");
 
 			}
 		};
