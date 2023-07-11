@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationStart, Route, Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-navigation',
@@ -13,7 +14,7 @@ export class NavigationComponent implements OnInit{
   openGroupChat=false;
   isOpenChat=false;
 chatId=""
-  constructor(private router: Router,private route: ActivatedRoute){
+  constructor(private router: Router,private route: ActivatedRoute, private apiService:ApiService){
     
   }
   ngOnInit(): void {
@@ -31,9 +32,9 @@ chatId=""
     });
   }
  
- collaps(e:any,t:boolean)
+ collaps(e:any)
   {
-  this.hovered=t;
+  this.hovered=!this.hovered;
   e.stopPropagation()
   }
   openChat(x:string)
@@ -42,6 +43,11 @@ chatId=""
      this.router.navigate([url])
        //this.isOpenChat=true;
     
+  }
+  logOut()
+  {
+    localStorage.removeItem('authToken');
+    window.location.reload();
   }
   
 

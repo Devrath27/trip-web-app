@@ -47,15 +47,25 @@ export class AuthenticationComponent implements  OnInit {
     
     return otp;
   }
- 
-  
-  
 
   loginUser(){
-    if(this.signUpForm.invalid){
+    console.log(1);
+    if(this.loginForm.invalid){
       this.isAll=true;
       return;
     }
+    console.log(2);
+
+    this.apiService.login(this.loginForm.value).subscribe((data)=>{
+      localStorage.setItem('authToken',data.token);
+      console.log(data.token);
+      window.location.reload();
+      this.apiService.logedIn$.next(true);
+        },(e)=>{
+      this.msg='something went wrong!!! try again.'
+      this.popUpType=true;
+      console.log(e);
+    })
 
   }
   sendOtp()
@@ -102,9 +112,18 @@ export class AuthenticationComponent implements  OnInit {
       this.msg='all fields are required!!!'
       this.popUpType=true;
       return;
-
     }
+
+    this.apiService.signUp(this.signUpForm.value).subscribe((data:{token:string})=>{
+      this.apiService.logedIn$.next(true);
+      localStorage.setItem('authToken',data.token);
+      window.location.reload();
+    },e=>{
+      this.msg='something went wrong!!! try again.'
+     this.popUpType=true;
+    })
+
   }
 
-
+  
 }

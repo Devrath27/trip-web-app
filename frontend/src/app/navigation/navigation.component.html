@@ -1,7 +1,7 @@
 <div class="page-container {{hovered?'collaps':''}}">
-    <div class="left-container {{hovered?'left-hover':''}}" (mouseover)="collaps($event,true)" (mouseout)="collaps($event,false)">
+    <div class="left-container {{hovered?'left-hover':''}}" >
        
-        <div class="logo" >
+        <div class="logo" (click)="collaps($event)">
             <img class="img1" src="assets/logo.png">
             <div class="{{hovered?'':'dis-none'}}" class="img2">MyTrip</div>
         </div>
@@ -35,6 +35,7 @@
                 </div>
             </div>
       </div>
+      <button (click)="logOut()">logout</button>
       
     </div>
     <div class="right-container {{hovered?'right-hover':''}}">
